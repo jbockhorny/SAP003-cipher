@@ -1,20 +1,26 @@
-// Pegar o conteúdo digitado pelo usuário
-       
-       
-function pegarValores(){
+function takeValueEncode(){
+         
+    let text = document.getElementById("text").value;
+    let offset = parseInt(document.getElementById("offset").value);
+          
+        if ( text === "" || offset < 1 || offset > 25 || isNaN(offset)) {
+            alert("Para codificar digite uma mensagem e o deslocamento entre 1 e 25!");
 
-       
-    let mensagem = document.getElementById("mensagem").value;
-    console.log(mensagem);
+        }  else {
+            encode(text, offset);
+        
+}
 
-    let offset = document.getElementById("offset").value;
-    console.log(offset);
 
-   }
+function takeValueDecode(){
 
-//while(" ") {
+    let text = document.getElementById("text").value;
+    let offset = parseInt(document.getElementById("offset").value);
+          
+        if ( text === "" || offset < 1 || offset > 25 || isNaN(offset)) {
+            alert("Para codificar digite uma mensagem e o deslocamento entre 1 e 25!");
 
-    //onclick
+        }  else {
+            decode(text, offset);
 
-    //alert("Para codificar digite uma mensagem");
-//}  
+}

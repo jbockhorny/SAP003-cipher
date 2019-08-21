@@ -2,34 +2,22 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Caesar Cipher</title>
+    <title>Cifra do Cesazinho</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="juliocesar.jpeg"/>
+    <link rel="icon" href="headCaesar.jpeg"/>
     
     </head>
   <body>
     <main>
-      <div class="julio" ><img src="julio.jpeg" alt="Desenho do Julio César" width=180 height=280></div>
-      <input align=center
-            type="text"
-            id="mensagem"
-            placeholder="Insira a mensagem"
-            name="text"
-            required
-                    
-          />
-          
-      <input
-            type="number"
-            id="offset"
-            placeholder="Insira o deslocamento"
-            name="offset"
-            required
+      <div class="Caesar" ><img src="Caesar.jpeg" alt="Desenho do Julio César" width=180 height=280></div>
+
+      <input text-align=center type="text" id="text" placeholder="Insira a mensagem" name="text" required />        
+      <input text-align=center type="number" id="offset" placeholder="Insira o deslocamento" name="offset" required />
             
-                    
-          />
-        <input type="submit" value="Codificar" onclick="pegarValores()"/>
-        <input type="submit" value="Decodificar" onclick="pegarValores()"/>
+        <input type="submit" value="Codificar" onclick="takeValueEncode()"/>
+        <input type="submit" value="Decodificar" onclick="takeValueDecode()"/>
+
+        <!--Tela do resultado - Precisa escrever-->
        
 
     </main>

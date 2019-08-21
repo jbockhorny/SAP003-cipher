@@ -1,5 +1,18 @@
 window.cipher = {
      
+   function encode(text, offset){
+
+
+
+
+   }
+
+
+
+    function decode(text, offset) {
+
+
+    //}
      
        // Como codificar uma letra     
 
@@ -11,6 +24,6 @@ window.cipher = {
         //let letraCodificada = ((letra.charCodeAt(0)-codAsc)+deslocamento)% tamDoAlfabeto +codAsc;
         //return String.fromCharCode(letraCodificada);
             
-    //}  
+    }  
        
 };      
