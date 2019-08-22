@@ -8,6 +8,7 @@ function takeValueEncode(){
 
         }  else {
             encode(text, offset);
+        }
         
 }
 
@@ -22,5 +23,6 @@ function takeValueDecode(){
 
         }  else {
             decode(text, offset);
+            }
 
 }
