@@ -1,4 +1,7 @@
-window.cipher = {};
+window.cipher = {
+    encode: encode,
+    decode: decode
+};
      
     function encode(text, offset){
     
@@ -6,27 +9,21 @@ window.cipher = {};
         let alphabetSize = 26;
         let firstAsci = 65;
 
-        for (let i=0; i < text.length; i++){ 
+            for (let i=0; i < text.length; i++){ 
 
-        if (text.charCodeAt(i)>=65 && text.charCodeAt(i)<=90){
+                if (text.charCodeAt(i)>=65 && text.charCodeAt(i)<=90){
 
-            textEncode[i]= (text.charCodeAt(i)-firstAsci+offset)% alphabetSize +firstAsci;
-            textEncode[i]=(String.fromCharCode(textEncode[i]));
-            
-                  
-        } else{   
-            
-            textEncode[i] = text.charAt(i);
-        }
+                    textEncode[i]= (text.charCodeAt(i)-firstAsci+offset)% alphabetSize +firstAsci;
+                    textEncode[i]= (String.fromCharCode(textEncode[i]));         
+                        
+                } else{   
                     
-       
-        let encodeResult = textEncode.join("");  
-         
-               
-    
-          
-        }
-          
+                    textEncode[i] = text.charAt(i);
+                }                    
+            
+                let encodeResult = textEncode.join("");  
+                console.log(encodeResult);  
+                }     
     }
 
     
@@ -34,25 +31,26 @@ window.cipher = {};
 
     function decode(text, offset){
     
-        let textEncode =[];    
+        let textDecode =[];    
         let alphabetSize = 26;
-        let firstAsci = 65;
+        let firstAsci = 90;
 
         for (let i=0; i < text.length; i++){ 
 
         if (text.charCodeAt(i)>=65 && text.charCodeAt(i)<=90){
 
-            textEncode[i] = (text.charCodeAt(i)-firstAsci-offset)% alphabetSize +firstAsci;
-            textEncode[i]=(String.fromCharCode(textEncode[i]));
-            
+            textDecode[i] = (text.charCodeAt(i)-firstAsci-offset)% alphabetSize +firstAsci;
+            textDecode[i] = (String.fromCharCode(textDecode[i]));
+
+                       
                   
         } else{   
             
-            textEncode[i] = text.charAt(i);
+            textDecode[i] = text.charAt(i);
         }
-                    
-       
-        let encodeResult = textEncode.join("");  
+        
+        let decodeResult = textDecode.join("");
+        console.log(decodeResult); 
         
           
         }

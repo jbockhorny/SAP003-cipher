@@ -10,7 +10,7 @@ function takeValueEncode(){
             encode(text, offset);
             
         }
-        document.getElementById("Resultado").value.innerHTML = `<p>A mensagem codificada é ${encodeResult}!</p>`     
+        //document.getElementById("Resultado").value.innerHTML = `<p>A mensagem codificada é ${encodeResult}!</p>`     
 }
 
 
@@ -19,7 +19,7 @@ function takeValueDecode(){
     let text = document.getElementById("text").value;
     let offset = parseInt(document.getElementById("offset").value);
           
-        if ( text === "" || offset <= 1 || offset >= 25 || isNaN(offset)) {
+        if ( text === "" || offset < 1 || offset > 25 || isNaN(offset)) {
             alert("Para codificar digite uma mensagem e o deslocamento entre 1 e 25!");
 
         }  else {
