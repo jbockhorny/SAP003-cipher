@@ -1,29 +1,31 @@
-function takeValueEncode(){
-         
-    let text = document.getElementById("text").value;
-    let offset = parseInt(document.getElementById("offset").value);
-          
-        if ( text === "" || offset < 1 || offset > 25 || isNaN(offset)) {
-            alert("Para codificar digite uma mensagem e o deslocamento entre 1 e 25!");
+function takeValueEncode() {
 
-        }  else {
-            encode(text, offset);
-            
-        }
-        //document.getElementById("Resultado").value.innerHTML = `<p>A mensagem codificada é ${encodeResult}!</p>`     
+  let text = document.getElementById("text").value;
+  let offset = Number(document.getElementById("offset").value);
+           
+  if ( text === "" || isNaN(offset) || offset === 0 ) {
+    alert("Para codificar digite uma mensagem e o deslocamento!");
+
+  } else if (offset <0){
+    document.getElementById("Resultado").innerHTML=`<p>A mensagem codificada é ${window.cipher.decode(text, -offset)}</p>`;
+
+  }else {        
+    document.getElementById("Resultado").innerHTML=`<p>A mensagem codificada é ${window.cipher.encode(text, offset)}</p>`;
+  }
 }
 
+function takeValueDecode() {
 
-function takeValueDecode(){
-
-    let text = document.getElementById("text").value;
-    let offset = parseInt(document.getElementById("offset").value);
+  let text = document.getElementById("text").value;
+  let offset = Number(document.getElementById("offset").value);
           
-        if ( text === "" || offset < 1 || offset > 25 || isNaN(offset)) {
-            alert("Para codificar digite uma mensagem e o deslocamento entre 1 e 25!");
+  if ( text === "" || isNaN(offset)|| offset === 0 ) {
+    alert("Para decodificar digite uma mensagem e o deslocamento!");
 
-        }  else {
-            decode(text, offset);
-            }
+  } else if (offset <0){
+    document.getElementById("Resultado").innerHTML=`<p>A mensagem decodificada é ${window.cipher.encode(text, -offset)}</p>`;
 
+  } else {
+    document.getElementById("Resultado").innerHTML=`<p>A mensagem decodificada é ${window.cipher.decode(text, offset)}</p>`;
+  }
 }
