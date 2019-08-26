@@ -1,14 +1,16 @@
 
     main{
-        float: center;
+        flex-direction: center;
         font-family: "Calibri", sans-serif;
         text-align: center;
         color: #000000;
+        margin: 0;
 
 }
 
-.julio {
-        float: center;
+.Caesar {
+        flex-direction: center;
+        margin: 0;
 }
 
 

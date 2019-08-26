@@ -11,12 +11,13 @@
     <main>
 
       <div class="Caesar" ><img src="Caesar.jpeg" alt="Desenho do Julio César" width=180 height=280></div>
-
+      <form>
       <input text-align=center type="text" id="text" placeholder="Insira a mensagem" name="text" required />        
       <input text-align=center type="number" id="offset" placeholder="Insira o deslocamento" name="offset" required />
             
-      <input type="submit" value="Codificar" onclick="takeValueEncode()"/>
-      <input type="submit" value="Decodificar" onclick="takeValueDecode()"/>
+      <button type="submit" id="codificar" >Codificar</button>
+      <button type="submit" id="decodificar" >Decodificar</button>
+      </form>
 
       <div id= "Resultado"></div>
     </main>
