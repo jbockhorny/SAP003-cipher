@@ -1,17 +1,50 @@
+body {
+    margin: 0;
+    background-color: rgb(255, 255, 255);
+}
 
-    main{
+.caesar {
+    
+    flex-direction: center;
+    margin-top: 80px;
+}
+
+main{
+        position: relative;
         flex-direction: center;
         font-family: "Calibri", sans-serif;
         text-align: center;
         color: #000000;
-        margin: 0;
-
 }
 
-.Caesar {
-        flex-direction: center;
-        margin: 0;
+#text{
+    border: solid rgb(255, 255, 255);
+    border-radius: 15px;
+    border-width: 1px;
+    font-family: "Calibri", sans-serif;
+    display: inline-block;
+    height: 30px;
+    width: 200px;
+}
+#offset{
+    border: solid rgb(255, 255, 255);
+    border-radius: 15px;
+    border-width: 1px;
+    font-family: "Calibri", sans-serif;
+    display: inline-block;
+    height: 30px;
+    width: 50px;
 }
 
+button {
+    border: solid rgb(238, 230, 230);
+    border-radius: 15px;
+    border-width: 1px;
+    font-family: "Calibri", sans-serif;
+    flex-direction: center;
+    height: 30px;
+    width: 90px;
+    display: inline-block;
+    background-color: rgb(238, 230, 230);
 
-/*centralizar os inputs e a imagem
+}

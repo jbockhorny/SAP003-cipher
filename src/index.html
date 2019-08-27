@@ -4,19 +4,24 @@
     <meta charset="utf-8">
     <title>Cifra do Cesarzinho</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="headCaesar.jpeg"/>
+    <link rel="icon" href="headCaesar.png"/>
   </head>
   <body>
 
     <main>
 
-      <div class="Caesar" ><img src="Caesar.jpeg" alt="Desenho do Julio César" width=180 height=280></div>
+      <div class="caesar" ><img src="Caesar.png" alt="Desenho do Julio César" width=180 height=280 ></div>
       <form>
-      <input text-align=center type="text" id="text" placeholder="Insira a mensagem" name="text" required />        
-      <input text-align=center type="number" id="offset" placeholder="Insira o deslocamento" name="offset" required />
-            
+
+      
+      <input type="text" id="text" placeholder="Insira a mensagem" name="text" required />        
+      <input type="number" id="offset" placeholder="Insira o deslocamento" name="offset" required />
+      
+
       <button type="submit" id="codificar" >Codificar</button>
       <button type="submit" id="decodificar" >Decodificar</button>
+         
+      
       </form>
 
       <div id= "Resultado"></div>
