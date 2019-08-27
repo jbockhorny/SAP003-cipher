@@ -2,8 +2,8 @@ window.cipher = {
   encode: encode,
   decode: decode
 };
-     
-function encode(text, offset) {
+
+function encode(offset, text) {
 
   let textEncode =[]; 
   let alphabetSize = 26;
@@ -21,18 +21,18 @@ function encode(text, offset) {
 
       textEncode[i]= (text.charCodeAt(i)-firstAsciLowercase+offset)% alphabetSize +firstAsciLowercase;
       textEncode[i]= (String.fromCharCode(textEncode[i]));                           
-                 
+                  
     } else {
       textEncode[i] = text.charAt(i);
     }                  
-                     
+                      
   } 
   return textEncode.join(""); 
-   
+    
 }     
 
-function decode(text, offset) {
-    
+function decode(offset, text) {
+		
   let textDecode =[];    
   let alphabetSize = 26;
   let firstAsciUppercase = 90;
@@ -44,12 +44,12 @@ function decode(text, offset) {
 
       textDecode[i] = (text.charCodeAt(i)-firstAsciUppercase-offset)% alphabetSize +firstAsciUppercase;
       textDecode[i] = (String.fromCharCode(textDecode[i]));
-                            
+                          
     } else if (text.charCodeAt(i)>=97 && text.charCodeAt(i)<=122) {
 
       textDecode[i]= (text.charCodeAt(i)-firstAsciLowercase-offset)% alphabetSize +firstAsciLowercase;
       textDecode[i]= (String.fromCharCode(textDecode[i]));                
-                
+              
     } else {
       textDecode[i] = text.charAt(i);
     }                 
