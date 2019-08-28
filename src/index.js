@@ -1,4 +1,4 @@
-document.getElementById("codificar").addEventListener("click", takeValueEncode);
+document.getElementById("encode").addEventListener("click", takeValueEncode);
 
 function takeValueEncode() {
   event.preventDefault();
@@ -8,18 +8,19 @@ function takeValueEncode() {
            
   if ( text === "" || isNaN(offset) || offset === 0 ) {
     alert("Para codificar digite uma mensagem e o deslocamento!");
+    document.form.text.focus();
 
   } else if (offset <0) {
-    document.getElementById("Resultado").innerHTML=`<p>A mensagem "${text}" codificada é: ${window.cipher.decode(-offset, text)}!</p>`;
+    document.getElementById("Result").innerHTML=`<p>A mensagem "${text}" codificada é: </br> ${window.cipher.decode(-offset, text)}!</p>`;
 
   } else {        
-    document.getElementById("Resultado").innerHTML=`<p>A mensagem "${text}"codificada é ${window.cipher.encode(offset, text)}!</p>`;
+    document.getElementById("Result").innerHTML=`<p>A mensagem "${text}"codificada é: ${window.cipher.encode(offset, text)}!</p>`;
   }
   text = "";
   offset ="";
 }
 
-document.getElementById("decodificar").addEventListener("click", takeValueDecode);
+document.getElementById("decode").addEventListener("click", takeValueDecode);
 function takeValueDecode() {
   event.preventDefault();
 
@@ -30,10 +31,10 @@ function takeValueDecode() {
     alert("Para decodificar digite uma mensagem e o deslocamento!");
 
   } else if (offset <0) {
-    document.getElementById("Resultado").innerHTML=`<p>A mensagem "${text}" decodificada é ${window.cipher.encode(-offset, text)}!</p>`;
+    document.getElementById("Result").innerHTML=`<p>A mensagem "${text}" decodificada é: ${window.cipher.encode(-offset, text)}!</p>`;
 
   } else {
-    document.getElementById("Resultado").innerHTML=`<p>A mensagem "${text}" decodificada é ${window.cipher.decode(offset, text)}!<p>`;
+    document.getElementById("Result").innerHTML=`<p>A mensagem "${text}" decodificada é: ${window.cipher.decode(offset, text)}!<p>`;
   }
 
 }

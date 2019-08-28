@@ -3,19 +3,18 @@ body {
     background-color: rgb(255, 255, 255);
 }
 
-.caesar {
-    
+.caesar {    
     flex-direction: center;
     margin-top: 80px;
 }
 
 main{
-        position: relative;
-        flex-direction: center;
-        font-family: "Calibri", sans-serif;
-        text-align: center;
-        color: #000000;
+    position: relative;
+    flex-direction: center;
+    font-family: "Calibri", sans-serif;
+    text-align: center;
 }
+
 
 #text{
     border: solid rgb(255, 255, 255);
@@ -25,7 +24,9 @@ main{
     display: inline-block;
     height: 30px;
     width: 200px;
+    box-shadow: 0 1px 6px 0  rgb(163, 141, 141);
 }
+
 #offset{
     border: solid rgb(255, 255, 255);
     border-radius: 15px;
@@ -33,18 +34,32 @@ main{
     font-family: "Calibri", sans-serif;
     display: inline-block;
     height: 30px;
-    width: 50px;
+    width: 100px;
+    box-shadow: 0 1px 6px 0  rgb(163, 141, 141);
 }
 
 button {
-    border: solid rgb(238, 230, 230);
-    border-radius: 15px;
+    border:none;
+    border-radius: 40px;
     border-width: 1px;
     font-family: "Calibri", sans-serif;
     flex-direction: center;
-    height: 30px;
+    height: 35px;
     width: 90px;
     display: inline-block;
     background-color: rgb(238, 230, 230);
+    outline: 0;
+    
+}
+button:hover {
+    border: 1px solid rgb(187, 164, 164);
+
+}
+
+#result{
+    border: solid rgb(255, 255, 255);
+    border-radius: 15px;
+    border-width: 1px;
+    word-break: 
 
 }

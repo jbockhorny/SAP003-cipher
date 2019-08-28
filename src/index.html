@@ -11,20 +11,20 @@
     <main>
 
       <div class="caesar" ><img src="Caesar.png" alt="Desenho do Julio César" width=180 height=280 ></div>
-      <form>
+      <form id="form" >
 
       
       <input type="text" id="text" placeholder="Insira a mensagem" name="text" required />        
-      <input type="number" id="offset" placeholder="Insira o deslocamento" name="offset" required />
+      <input type="number" id="offset" placeholder="Deslocamento" name="offset" required />
       
 
-      <button type="submit" id="codificar" >Codificar</button>
-      <button type="submit" id="decodificar" >Decodificar</button>
+      <button type="submit" id="encode" >Codificar</button>
+      <button type="submit" id="decode" >Decodificar</button>
          
       
       </form>
 
-      <div id= "Resultado"></div>
+      <div id= "Result"></div>
     </main>
     
     <script src="cipher.js"></script>
