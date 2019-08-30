@@ -15,7 +15,7 @@ function takeValueEncode() {
     document.getElementById("text").focus(); 
 
   } else if ((parsedOffset %26) === 0) { 
-    alert("Com o deslocamento " + offset + " você percorreu o alfabeto inteiro e voltou a sua mensagem original!")
+    alert("Com o deslocamento " + parsedOffset + " você percorreu o alfabeto inteiro e voltou a sua mensagem original!");
   
    } else if (parsedOffset <0) {
     result.innerHTML=`<p>A mensagem "${text.value}" codificada é: <br/> ${window.cipher.decode(-parsedOffset, text.value)}!</p>`;
@@ -35,6 +35,10 @@ function takeValueDecode() {
           
   if ( text.value === "" || isNaN(parsedOffset)|| parsedOffset === 0 ) {
     alert("Para decodificar digite uma mensagem e o deslocamento!");
+    document.getElementById("text").focus(); 
+
+  } else if ((parsedOffset %26) === 0) { 
+    alert("Com o deslocamento " + parsedOffset + " você percorreu o alfabeto inteiro e voltou a sua mensagem original!");
 
   } else if (parsedOffset <0) {
     result.innerHTML=`<p>A mensagem "${text.value}" decodificada é: ${window.cipher.encode(-parsedOffset, text.value)}!</p>`;

@@ -4,7 +4,8 @@ window.cipher = {
 };
 
 const alphabetSize = 26;
-let textEncode =[]; 
+let textEncode =[];
+let textDecode =[];
 
 function encode(offset, text) {
 
