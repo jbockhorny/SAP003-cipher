@@ -3,12 +3,10 @@ window.cipher = {
   decode: decode
 };
 
-const alphabetSize = 26;
-let textEncode =[];
-let textDecode =[];
-
 function encode(offset, text) {
 
+  let textEncode =[]; 
+  let alphabetSize = 26;
   let firstAsciUppercase = 65;
   let firstAsciLowercase = 97;
 
@@ -33,8 +31,10 @@ function encode(offset, text) {
     
 }     
 
-function decode(offset, text) {		
-
+function decode(offset, text) {
+		
+  let textDecode =[];    
+  let alphabetSize = 26;
   let firstAsciUppercase = 90;
   let firstAsciLowercase = 122;
 

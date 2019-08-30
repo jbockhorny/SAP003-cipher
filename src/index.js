@@ -1,52 +1,47 @@
 document.getElementById("encode").addEventListener("click", takeValueEncode);
 
-let text = document.getElementById("text");
-let offset = document.getElementById("offset");
 let form = document.getElementById("form");
 let result = document.getElementById("result");
 
 function takeValueEncode() {
   event.preventDefault();
 
-  let parsedOffset = Number(offset.value);
+  let offset = Number(document.getElementById("offset").value);
+  let text = document.getElementById("text").value;
            
-  if ( text.value === "" || isNaN(parsedOffset) || parsedOffset === 0 ) {
-    alert("Para codificar digite uma mensagem e o deslocamento!");  
-    document.getElementById("text").focus(); 
+  if ( text === "" || isNaN(offset) || offset === 0 ) {
+    alert("Para codificar digite uma mensagem e o deslocamento!");    
 
-  } else if ((parsedOffset %26) === 0) { 
-    alert("Com o deslocamento " + parsedOffset + " você percorreu o alfabeto inteiro e voltou a sua mensagem original!");
+  } else if ((offset %26) === 0) { 
+    alert("Com o deslocamento " + offset + " você percorreu o alfabeto inteiro e voltou a sua mensagem original!");
   
-   } else if (parsedOffset <0) {
-    result.innerHTML=`<p>A mensagem "${text.value}" codificada é: <br/> ${window.cipher.decode(-parsedOffset, text.value)}!</p>`;
+  } else if (offset <0) {
+    result.innerHTML=`<p>A mensagem "${text}" codificada é: ${window.cipher.decode(-offset, text)}!</p>`;
 
   } else {        
-    result.innerHTML=`<p>A mensagem "${text.value}"codificada é: ${window.cipher.encode(parsedOffset, text.value)}!</p>`;
+    result.innerHTML=`<p>A mensagem "${text}"codificada é ${window.cipher.encode(offset, text)}!</p>`;
   }
-  form.reset();
-  text.focus(); 
+  form.reset(); 
 }
 
 document.getElementById("decode").addEventListener("click", takeValueDecode);
 function takeValueDecode() {
   event.preventDefault();
 
-  let parsedOffset = Number(offset.value);
+  let offset = Number(document.getElementById("offset").value);
+  let text = document.getElementById("text").value;
           
-  if ( text.value === "" || isNaN(parsedOffset)|| parsedOffset === 0 ) {
+  if ( text === "" || isNaN(offset)|| offset === 0 ) {
     alert("Para decodificar digite uma mensagem e o deslocamento!");
-    document.getElementById("text").focus(); 
 
-  } else if ((parsedOffset %26) === 0) { 
-    alert("Com o deslocamento " + parsedOffset + " você percorreu o alfabeto inteiro e voltou a sua mensagem original!");
+  } else if ((offset %26) === 0) { 
+    alert("Com o deslocamento " + offset + " você percorreu o alfabeto inteiro e voltou a sua mensagem original!");
 
-  } else if (parsedOffset <0) {
-    result.innerHTML=`<p>A mensagem "${text.value}" decodificada é: ${window.cipher.encode(-parsedOffset, text.value)}!</p>`;
+  } else if (offset <0) {
+    result.innerHTML=`<p>A mensagem "${text}" decodificada é ${window.cipher.encode(-offset, text)}!</p>`;
 
   } else {
-    result.innerHTML=`<p>A mensagem "${text.value}" decodificada é: ${window.cipher.decode(parsedOffset, text.value)}!<p>`;
+    result.innerHTML=`<p>A mensagem "${text}" decodificada é ${window.cipher.decode(offset, text)}!<p>`;
   }
-  form.reset();
-  text.focus(); 
+  form.reset();  
 }
-
