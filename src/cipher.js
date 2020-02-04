@@ -3,56 +3,56 @@ window.cipher = {
   decode: decode
 };
 
+const alphabetSize = 26;
 function encode(offset, text) {
 
-  let textEncode =[]; 
-  let alphabetSize = 26;
+  let textEncode = "";
   let firstAsciUppercase = 65;
   let firstAsciLowercase = 97;
+  
 
-  for (let i=0; i < text.length; i++) { 
+  for (let i in text) {
 
-    if (text.charCodeAt(i)>=65 && text.charCodeAt(i)<=90) {
+    const uppercase = text.charCodeAt(i) >= 65 && text.charCodeAt(i) <= 90;
+    const lowercase = text.charCodeAt(i) >= 97 && text.charCodeAt(i) <= 122;
 
-      textEncode[i]= (text.charCodeAt(i)-firstAsciUppercase+offset)% alphabetSize +firstAsciUppercase;
-      textEncode[i]= (String.fromCharCode(textEncode[i]));
-                                                                
-    } else if (text.charCodeAt(i)>=97 && text.charCodeAt(i)<=122) {
+    if (uppercase) {
 
-      textEncode[i]= (text.charCodeAt(i)-firstAsciLowercase+offset)% alphabetSize +firstAsciLowercase;
-      textEncode[i]= (String.fromCharCode(textEncode[i]));                           
-                  
+      textEncode += String.fromCharCode((text.charCodeAt(i) - firstAsciUppercase + offset) % alphabetSize + firstAsciUppercase);
+    } else if (lowercase) {
+
+      textEncode += String.fromCharCode((text.charCodeAt(i) - firstAsciLowercase + offset) % alphabetSize + firstAsciLowercase);
     } else {
-      textEncode[i] = text.charAt(i);
-    }                  
-                      
-  } 
-  return textEncode.join(""); 
-    
-}     
+
+      textEncode += text.charAt(i);
+      console.log('Caracter', textEncode)
+    }
+  }
+  return textEncode;
+}
 
 function decode(offset, text) {
-		
-  let textDecode =[];    
-  let alphabetSize = 26;
+
+  let textDecode = "";
   let firstAsciUppercase = 90;
   let firstAsciLowercase = 122;
+  for (let i in text) {
 
-  for (let i=0; i < text.length; i++) { 
+    const uppercase = text.charCodeAt(i) >= 65 && text.charCodeAt(i) <= 90;
+    const lowercase = text.charCodeAt(i) >= 97 && text.charCodeAt(i) <= 122;
 
-    if (text.charCodeAt(i)>=65 && text.charCodeAt(i)<=90) {
+    if (uppercase) {
 
-      textDecode[i] = (text.charCodeAt(i)-firstAsciUppercase-offset)% alphabetSize +firstAsciUppercase;
-      textDecode[i] = (String.fromCharCode(textDecode[i]));
-                          
-    } else if (text.charCodeAt(i)>=97 && text.charCodeAt(i)<=122) {
+      textDecode += String.fromCharCode((text.charCodeAt(i) - firstAsciUppercase - offset) % alphabetSize + firstAsciUppercase);
 
-      textDecode[i]= (text.charCodeAt(i)-firstAsciLowercase-offset)% alphabetSize +firstAsciLowercase;
-      textDecode[i]= (String.fromCharCode(textDecode[i]));                
-              
+    } else if (lowercase) {
+
+      textDecode += String.fromCharCode((text.charCodeAt(i) - firstAsciLowercase - offset) % alphabetSize + firstAsciLowercase);
+
     } else {
-      textDecode[i] = text.charAt(i);
-    }                 
+
+      textDecode += text.charAt(i);
+    }
   }
-  return textDecode.join("");          
+  return textDecode;
 }

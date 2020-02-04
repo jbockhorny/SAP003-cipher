@@ -1,35 +1,26 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Cifra do Cesarzinho</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="headCaesar.png"/>
-  </head>
-  <body>
+<head>
+  <meta charset="utf-8">
+  <title>Cifra do Cesarzinho</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="img/headCaesar.png" />
+</head>
+<body>
+  <header class="caesar"><img src="img/Caesar.png" alt="Desenho do Julio César" width="140" height="210"></header>
+  <main>
+    <form id="form">
+      <input type="text" id="text" placeholder="Insira a mensagem" name="text" required autofocus />
+      <input type="number" id="offset" placeholder="Deslocamento" name="offset" required />
+      <button type="submit" id="encode">Codificar</button>
+      <button type="submit" id="decode">Decodificar</button>
+    </form>
+    <div class="parchment"><img src="img/parchment.png" width="420" height="320">
+      <div id="result"></div>
+    </div>
+  </main>
+  <script src="cipher.js"></script>
+  <script src="index.js"></script>
+</body>
 
-    <main>
-
-      <div class="caesar" ><img src="Caesar.png" alt="Desenho do Julio César" width= "140" height= "210" ></div>
-      
-      <form id="form" >
-      
-      <input type="text" id="text" placeholder="Insira a mensagem" name="text" required autofocus/>        
-      <input type="number" id="offset" placeholder="Deslocamento" name="offset" required />      
-
-      <button type="submit" id="encode" >Codificar</button>
-      <button type="submit" id="decode" >Decodificar</button>     
-            
-      </form>
-      
-      <div class="parchment" ><img src="parchment.png" width= "420" height= "320" >
-      <div id= "result"></div> 
-      
-      </div>
-     
-    </main>
-    
-    <script src="cipher.js"></script>
-    <script src="index.js"></script>
-  </body>
 </html>

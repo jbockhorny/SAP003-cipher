@@ -3,16 +3,20 @@ body {
     background-color: rgb(255, 255, 255);
 }
 
-.caesar {    
-
-    flex-direction: center;
-    margin-top: 15px;    
+header {
+    display: flex;
+    flex-direction: row;
 }
 
 main{
     position: relative;
     font-family: "Calibri", sans-serif;
     text-align: center;
+}
+
+.caesar {  
+    justify-content: center;
+    margin-top: 15px;    
 }
 
 #text{
