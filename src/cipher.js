@@ -9,7 +9,7 @@ function encode(offset, text) {
   let textEncode = "";
   let firstAsciUppercase = 65;
   let firstAsciLowercase = 97;
-  
+
 
   for (let i in text) {
 
@@ -25,7 +25,7 @@ function encode(offset, text) {
     } else {
 
       textEncode += text.charAt(i);
-      console.log('Caracter', textEncode)
+
     }
   }
   return textEncode;
